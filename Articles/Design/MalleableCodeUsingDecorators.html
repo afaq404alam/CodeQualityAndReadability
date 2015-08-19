@@ -16,26 +16,22 @@
 <p><em>Author: Kasper B. Graversen</em>
 <br><a href="http://kbilsted.github.io/CodeQualityAndReadability/">[Introduction]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllTags.html">[All categories]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">[All articles]</a>
 <br></p>
-<p><Categories Tags="Design, SOLID, Single_Responsibility_Principle, Design_Pattern, Decorator, Wrapper, Cache ">
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Design.html"><img src="https://img.shields.io/badge/-Design-eee6bb.svg" alt="Tag" /></a>
+<p><a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Design.html"><img src="https://img.shields.io/badge/-Design-eee6bb.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/SOLID.html"><img src="https://img.shields.io/badge/-SOLID-815bee.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Single_Responsibility_Principle.html"><img src="https://img.shields.io/badge/-Single_Responsibility_Principle-27d630.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Design_Pattern.html"><img src="https://img.shields.io/badge/-Design_Pattern-9e89d7.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Decorator.html"><img src="https://img.shields.io/badge/-Decorator-1549c6.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Wrapper.html"><img src="https://img.shields.io/badge/-Wrapper-7d8750.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Cache.html"><img src="https://img.shields.io/badge/-Cache-3dda0b.svg" alt="Tag" /></a>
-</Categories></p>
+<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Cache.html"><img src="https://img.shields.io/badge/-Cache-3dda0b.svg" alt="Tag" /></a></p>
 <p><em>Using the decorator design pattern, we get an exquisite separation of concern, while at the same time make the code more malleable.</em></p>
 <p>Please show your support by sharing and voting: </p>
-<p><SocialShareButtons>
-<a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
+<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
 <a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
 <a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
 <a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
 <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
 <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a>
-</SocialShareButtons> </p>
+<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/httpspixabay.comdavand-anlæg-grøn-bøde-lag-abstrakt-821293.jpg" alt="from https://pixabay.com/da/vand-anl%C3%A6g-gr%C3%B8n-b%C3%B8de-lag-abstrakt-821293/" ></p>
 <p>Table of Content
    * <a href="#1-introduction">1. Introduction</a>
@@ -260,30 +256,21 @@ The <em>decorator</em> design pattern is similar to the wrapper object approach,
 <li>We are implementing a cache mapping types to code generation. While we are processing many thousands of objects, they originate from the same class definition - thus the number of types exercised is countable on one hand. Our cache thus has a minimum of calls to the code generator</li>
 <li>Maybe since we are referring to the cached code generator from only one place in the code, which is a <code>readonly</code> variable, the JIT'er is quick to discover that the interface type and the indirection it causes, can be optimized away.</li>
 </ul>
-<p>Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: <SocialShareButtons>
+<p>Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: Please show your support by sharing and voting: 
 <a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
 <a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
 <a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
 <a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
 <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
 <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a>
-</SocialShareButtons> </p>
+<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <h2 id="comments-and-corrections">6. Comments and corrections</h2>
-<p><CommentText>
-<strong>Comments, corrections and other editorial changes are very welcome. Just log onto Github, press the edit button and fire away. Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. Do you have something to elaborate.. press the edit button!! :-)</strong></p>
-<p><em>Comments should go below this line (and use the following template).</em></p>
-<p>Name: Bubba Jones</p>
-<blockquote>
-<p>text..<br />
-text..  
-</p>
-</blockquote>
-<p></CommentText>
-<br></p>
-<p>Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+<p><strong>Corrections and other editorial changes are very welcome. Just log onto Github, press the edit button and fire away. Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. Do you have something to elaborate.. press the edit button!! :-)</strong></p>
+<p><br>
 <br>
-<a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-65034248-2/QualityAndReadability/Articles_Design_MalleableCodeUsingDecorators.md" alt="Analytics" /></a></p>
+Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+<br></p>
+
 
 
 </article>

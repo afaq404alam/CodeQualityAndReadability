@@ -16,22 +16,18 @@
 <p><em>Author: Kasper B. Graversen</em>
 <br><a href="http://kbilsted.github.io/CodeQualityAndReadability/">[Introduction]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllTags.html">[All categories]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">[All articles]</a>
 <br>
-<Categories Tags="Domain_Types, Emergent_Behaviour, Code_Readability">
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Domain_Types.html"><img src="https://img.shields.io/badge/-Domain_Types-400cdb.svg" alt="Tag" /></a>
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Emergent_Behaviour.html"><img src="https://img.shields.io/badge/-Emergent_Behaviour-80b3ec.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a>
-</Categories></p>
+<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a></p>
 <p><em>The focus of this article is how readability and maintainability is improved by replacing simple types with domain types. Consequences of introducing domain types is both a closer relationship between model and implementation, and that the domain types establishes a conceptual foundation making it easier to extend and adapt the application for future changes.</em></p>
-<p>Please show your support by sharing and voting: 
-<SocialShareButtons>
-<a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
+<p>Please show your support by sharing and voting: </p>
+<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
 <a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
 <a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
 <a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
 <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
 <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a>
-</SocialShareButtons> </p>
+<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/httpspixabay.comdasommerfugl-insekt-oejne-sensor-376876.jpg"></p>
 <p>Table of Content
    * <a href="#1-describing-the-problem-domain">1. Describing the problem domain</a>
@@ -399,29 +395,21 @@ private string RinseForLinkText(string s)
 <li>The domain types enable the &quot;jump to definition&quot; functionality in your IDE. On the domain types you now have a &quot;go to&quot; place for extra functionality, validations, heck, you can even sprinkle with documentation</li>
 <li>Despite the initial judgement call, where we deemed an abstraction over the file system  &quot;too academic&quot;, eventually I did  create said abstraction. A <code>FileRepository</code> replacing  calls to  <code>DirectoryInfo</code> and <code>File</code>. This abstraction enabled us to do unit testing without hitting the hard drive and needing to clean up files. I guess, some times, unit testing can drive you to do domain types as well :-)</li>
 </ul>
-<p>Please show your support by sharing and voting: <SocialShareButtons>
+<p>Please show your support by sharing and voting: 
 <a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
 <a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
 <a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
 <a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
 <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
 <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a>
-</SocialShareButtons> </p>
+<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <h2 id="comments-and-corrections">6. Comments and corrections</h2>
-<p><CommentText>
-<strong>Comments, corrections and other editorial changes are very welcome. Just log onto Github, press the edit button and fire away. Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. Do you have something to elaborate.. press the edit button!! :-)</strong></p>
-<p><em>Comments should go below this line (and use the following template).</em></p>
-<p>Name: Bubba Jones</p>
-<blockquote>
-<p>text..<br />
-text..  
-</p>
-</blockquote>
-<p></CommentText></p>
-<p>Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+<p><strong>Corrections and other editorial changes are very welcome. Just log onto Github, press the edit button and fire away. Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. Do you have something to elaborate.. press the edit button!! :-)</strong></p>
+<p><br>
 <br>
-<a href="https://github.com/igrigorik/ga-beacon"><img src="https://ga-beacon.appspot.com/UA-65034248-2/QualityAndReadability/Articles_Design_DomainTypeAndEmergentBehaviour.md" alt="Analytics" /></a></p>
+Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+<br></p>
+
 
 
 </article>
