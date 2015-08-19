@@ -29,24 +29,34 @@ We show that there are multiple layers of complexity when it comes to issues of 
 <a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Readability/TheChangingNotionOfReadability.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
 <a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Readability/TheChangingNotionOfReadability.html&amp;t=On%20the%20changing%20notion%20of%20code%20readability"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/http_uxmastery.com_wp-content_uploads_2013_09_readability-tests.png" width="90%"></p>
-<p>Table of Content
-   * <a href="#1-introduction">1. Introduction</a>
-   * <a href="#2-the-psychology-of-less-experienced-developers">2. The psychology of less experienced developers</a>
-   * <a href="#3-investigating-surface-complexity">3. Investigating &quot;surface complexity&quot;</a>
-     * <a href="#31-the-notion-of-readability-changes-with-growing-experience">3.1 The notion of readability changes with growing experience</a>
-       * <a href="#version-a">Version A</a>
-       * <a href="#version-b">Version B</a>
-       * <a href="#version-c">Version C</a>
-       * <a href="#version-d">Version D</a>
-       * <a href="#version-e">Version E</a>
-       * <a href="#version-f">Version F</a>
-       * <a href="#final-version">Final version</a>
-       * <a href="#conclusions">Conclusions</a>
-     * <a href="#32-the-veterans-perspective">3.2 The veterans perspective</a>
-   * <a href="#4-investigating-underlying-complexity">4. Investigating &quot;underlying complexity&quot;</a>
-   * <a href="#41-the-architectural-simplification-that-never-became">4.1 The architectural simplification that never became</a>
-   * <a href="#5-conclusions">5. Conclusions</a>
-   * <a href="#6-comments">6. Comments</a></p>
+<p>Table of Content</p>
+<ul>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-the-psychology-of-less-experienced-developers">2. The psychology of less experienced developers</a></li>
+<li>
+<a href="#3-investigating-surface-complexity">3. Investigating &quot;surface complexity&quot;</a>
+<ul>
+<li>
+<a href="#31-the-notion-of-readability-changes-with-growing-experience">3.1 The notion of readability changes with growing experience</a>
+<ul>
+<li><a href="#version-a">Version A</a></li>
+<li><a href="#version-b">Version B</a></li>
+<li><a href="#version-c">Version C</a></li>
+<li><a href="#version-d">Version D</a></li>
+<li><a href="#version-e">Version E</a></li>
+<li><a href="#version-f">Version F</a></li>
+<li><a href="#final-version">Final version</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#32-the-veterans-perspective">3.2 The veterans perspective</a></li>
+</ul>
+</li>
+<li><a href="#4-investigating-underlying-complexity">4. Investigating &quot;underlying complexity&quot;</a></li>
+<li><a href="#41-the-architectural-simplification-that-never-became">4.1 The architectural simplification that never became</a></li>
+<li><a href="#5-conclusions">5. Conclusions</a></li>
+<li><a href="#6-comments">6. Comments</a></li>
+</ul>
 <h2 id="introduction">1. Introduction</h2>
 <p>As made painfully evident by the show &quot;X-factor&quot;, the less you know about a subject, the smarter you think you are on that subject. Likewise, discussions on program readability and best practices easily descents into a discussion on personal preferences and habits. Of particular difficulty is the problem that the notion of what is readable code changes with the experience you have with programming. Complexity comes in many forms. Inspired by KhyronVorrac comments on Reddit, perhaps it is helpful to differentiate between <em>surface complexity</em> and <em>underlying complexity</em> when discussing the readability of code. </p>
 <p><strong>Surface complexity:</strong> The complexity you immediately see when reading code. It is hard to exactly pin point, but includes code formatting, language features, and certain form of documentation.</p>
