@@ -95,30 +95,28 @@ We show that there are multiple layers of complexity when it comes to issues of 
 <p>Given some field <code>txtName</code> on a Gui we have to figure out if anything has been entered. Having learned to extract into separate methods, lines that relate to the same thing, the less experienced programmer may develop &quot;version A&quot; to perform said check.</p>
 <p><strong>Here we look at surface complexity</strong></p>
 <h4 id="version-a">Version A</h4>
-<p>```java
-bool CheckName()
+<pre class="prettyprint"><code>bool CheckName()
 {
     string text;
-    bool returnValue;</p>
-<pre class="prettyprint"><code>text = txtName.getText();
+    bool returnValue;
 
-if (text.equals(&quot;&quot;) == true) 
-{
-    returnValue = true;
+    text = txtName.getText();
+
+    if (text.equals(&quot;&quot;) == true) 
+    {
+        returnValue = true;
+    }
+    else 
+    {
+        returnValue = false;
+    }
+    return returnValue;
 }
-else 
-{
-    returnValue = false;
-}
-return returnValue;
 </code></pre>
-<p>}
-```</p>
 <p>With a bit of experience you can tell that this code is <em>too verbose</em>. It actually hurt readability as the intent of the code is blurred by the trivial assignments. The fact that it has been extracted out, though makes it bearable. This is with the caveat that if all code is as verbose as this, no amount of &quot;extract method&quot; can save you. Finally, you would probably register <code>CheckName()</code> as really undescriptive. More on this later.</p>
 <h4 id="version-b">Version B</h4>
 <p>Students are quick to realize that we don't need the variable <code>text</code>, and they learn we never write <code>== true</code></p>
-<p><code>java
-bool CheckName()
+<pre class="prettyprint"><code>bool CheckName()
 {
     bool returnValue;
     returnValue = txtName.getText().equals(&quot;&quot;);
@@ -130,11 +128,11 @@ bool CheckName()
     {
         return false;
     }
-}</code></p>
+}
+</code></pre>
 <p>A much shorter version, the <code>returnValue</code> variable is still a thorn in the eye and is reminiscent of the single-entry-single-return structure.</p>
 <h4 id="version-c">Version C</h4>
-<p><code>java
-bool CheckName()
+<pre class="prettyprint"><code>bool CheckName()
 {
     if (txtName.getText().equals(&quot;&quot;)) 
     {
@@ -144,38 +142,39 @@ bool CheckName()
     {
         return false;
     }
-}</code></p>
+}
+</code></pre>
 <p>Now we are getting somewhere. The intent of the code is prevailing.</p>
 <h4 id="version-d">Version D</h4>
 <p>Now is the time to start dusting off the final trivialities. We don't need <code>else</code> since <code>return false</code> can only be reached if <code>return true</code> hasn't been executed.</p>
-<p><code>java
-bool CheckName() 
+<pre class="prettyprint"><code>bool CheckName() 
 {
     if (txtName.getText().equals(&quot;&quot;)) 
     {
         return true;
     }
     return false;
-}</code></p>
+}
+</code></pre>
 <h4 id="version-e">Version E</h4>
 <p>An alternative implementation can be achieved using the ternary operator.</p>
-<p><code>java
-bool CheckName() 
+<pre class="prettyprint"><code>bool CheckName() 
 {
     return (txtName.getText().equals(&quot;&quot;) ? true : false);
-}</code></p>
+}
+</code></pre>
 <h4 id="version-f">Version F</h4>
 <p>We now realize that, when the expression is true we return true, otherwise false. We can thus in-line this directly in by simply returning the result of the expression.</p>
-<p><code>java
-bool CheckName() 
+<pre class="prettyprint"><code>bool CheckName() 
 {
     return txtName.getText() == &quot;&quot;;
-}</code></p>
+}
+</code></pre>
 <h4 id="final-version">Final version</h4>
 <p>At this stage, we must ponder whether we need this code to reside inside a methods at all. There are good arguments for concealing code, even tiny chunks of code inside a method, but alternatively we can just use the code as:</p>
-<p><code>java
-if (txtName.getText() == &quot;&quot;)
-    ...</code></p>
+<pre class="prettyprint"><code>if (txtName.getText() == &quot;&quot;)
+    ... 
+</code></pre>
 <p>It is hard define <em>when</em>, a method containing one line of code is good practice. Often I do it when the line I am extracting is not readily understandable, or maybe it is a central business requirement. When I feel the need to document a line of code in a method, I consider if I instead should extract it into a method and have the method name serve as documentation. Assume a business requirement that all SKU (Stock keeping unit number) is to start with <code>1</code>. Rather than in-line checking this in the code, I could be tempted to extracting this into a <code>IsValidSKU()</code> method. It is a much more compelling thought, than using the the totally generic <code>CheckName()</code> naming. </p>
 <h4 id="conclusions">Conclusions</h4>
 <p>Up until version E of the code, we find typical beginners code. <em>Beginners do not write verbose code out of malice. They do it to help themselves. To make the code readable to them.</em></p>
@@ -199,8 +198,7 @@ if (txtName.getText() == &quot;&quot;)
 </ul>
 <p>Looking at this list in retrospective, it is clear that it revolves around <em>surface complexities</em>.</p>
 <p>The other day I was visiting a cemetery for code. http://codebituary.com/  which is a resting place for start-up code that never made it. Through there, I clicked a random project which led to Github, and from there I clicked the first file name I found to be interesting. Take my check list and see how well I would score the below code.</p>
-<p><code>java
-//offline crawl
+<pre class="prettyprint"><code>//offline crawl
 public static void crawl(){
     //0) download main page
     String html;
@@ -261,7 +259,8 @@ public static void crawl(){
     }
     //close file
     pw.close();
-}</code></p>
+}
+</code></pre>
 <p>Clearly there is a problem between my understanding of readable code and the above snippet. My intentions with posting this code, is of course not to hang the authors to dry. I find it more relevant to delve into real-life code, than making up examples on my own. But I'm digressing here. The point is that judging the code against my list, there are people out there that are programming in a vastly different manner than I! And eventually this creates tension if such different coding styles are to co-exist in the same project. Presumably both of us think that <em>our</em> code is &quot;readable&quot;.</p>
 <p>Assume that I and those authors were on the same project. Should it be I or them that should define the conduct of the company/project? I don't know the authors of the above code. Possibly the authors were in a hurry, or maybe this is how they prefer their code. Just to make sure, I went back and checked another file on the project. It was almost an exact copy of the above. Clearly code duplication was not an issue to them.</p>
 <h2 id="investigating-underlying-complexity">4. Investigating &quot;underlying complexity&quot;</h2>
