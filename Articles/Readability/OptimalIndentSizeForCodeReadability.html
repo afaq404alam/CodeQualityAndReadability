@@ -1,9 +1,9 @@
-﻿
-<html>
+﻿<html>
 <head>
 <title>Optimal indent size for code readability</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -35,50 +35,50 @@
 <p><img src="img/i.imgur.com_BtjZedW.jpg"></p>
 <p>Table of Content</p>
 <ul>
-<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
 <li>
-<a href="#2-background-information">2. Background information</a>
+<a href="#background-information">2. Background information</a>
 <ul>
-<li><a href="#21-code-consistency">2.1 Code consistency</a></li>
-<li><a href="#22-indention-based-languages">2.2 Indention-based languages</a></li>
-<li><a href="#23-research">2.3 Research</a></li>
-<li><a href="#24-tabs-or-spaces">2.4 Tabs or spaces</a></li>
-<li><a href="#25-the-linux-kernel-coding-guidelines">2.5 The linux kernel coding guidelines</a></li>
+<li><a href="#code-consistency">2.1 Code consistency</a></li>
+<li><a href="#indention-based-languages">2.2 Indention-based languages</a></li>
+<li><a href="#research">2.3 Research</a></li>
+<li><a href="#tabs-or-spaces">2.4 Tabs or spaces</a></li>
+<li><a href="#the-linux-kernel-coding-guidelines">2.5 The linux kernel coding guidelines</a></li>
 </ul>
 </li>
 <li>
-<a href="#3-investigating-the-primary-effect">3. Investigating the primary effect</a>
+<a href="#investigating-the-primary-effect">3. Investigating the primary effect</a>
 <ul>
-<li><a href="#31-indent-size-0">3.1 Indent size: 0</a></li>
-<li><a href="#32-indent-size-18">3.2 Indent size: 18</a></li>
-<li><a href="#33-indent-size-4">3.3 Indent size: 4</a></li>
+<li><a href="#indent-size">3.1 Indent size: 0</a></li>
+<li><a href="#indent-size">3.2 Indent size: 18</a></li>
+<li><a href="#indent-size">3.3 Indent size: 4</a></li>
 </ul>
 </li>
 <li>
-<a href="#4-recommendations">4. Recommendations</a>
+<a href="#recommendations">4. Recommendations</a>
 <ul>
-<li><a href="#41-recommendation-use-4-space-indent">4.1 Recommendation: Use 4 space indent</a></li>
-<li><a href="#42-recommendation-a-single-statement-pr-line">4.2. Recommendation: A single statement pr. line</a></li>
+<li><a href="#recommendation-use--space-indent">4.1 Recommendation: Use 4 space indent</a></li>
+<li><a href="#recommendation-a-single-statement-pr-line">4.2. Recommendation: A single statement pr. line</a></li>
 </ul>
 </li>
 <li>
-<a href="#5-the-secondary-effect-of-code-indention">5. The secondary effect of code indention</a>
+<a href="#the-secondary-effect-of-code-indention">5. The secondary effect of code indention</a>
 <ul>
-<li><a href="#51-technique-quick-bailout">5.1 Technique: Quick bailout</a></li>
-<li><a href="#52-technique-early-return--fail-fast">5.2 Technique: Early return / Fail fast</a></li>
-<li><a href="#53-technique-separate-iteration-from-processing">5.3 Technique: Separate iteration from processing</a></li>
+<li><a href="#technique-quick-bailout">5.1 Technique: Quick bailout</a></li>
+<li><a href="#technique-early-return--fail-fast">5.2 Technique: Early return / Fail fast</a></li>
+<li><a href="#technique-separate-iteration-from-processing">5.3 Technique: Separate iteration from processing</a></li>
 <li>
-<a href="#54-design-patterns">5.4 Design patterns</a>
+<a href="#design-patterns">5.4 Design patterns</a>
 <ul>
-<li><a href="#541-the-strategy-design-pattern">5.4.1 The strategy design pattern</a></li>
-<li><a href="#542-the-decorator-design-pattern">5.4.2 The decorator design pattern</a></li>
+<li><a href="#the-strategy-design-pattern">5.4.1 The strategy design pattern</a></li>
+<li><a href="#the-decorator-design-pattern">5.4.2 The decorator design pattern</a></li>
 </ul>
 </li>
-<li><a href="#55-summary">5.5 Summary</a></li>
+<li><a href="#summary">5.5 Summary</a></li>
 </ul>
 </li>
-<li><a href="#6-conclusions">6. Conclusions</a></li>
-<li><a href="#7-comments-and-corrections">7. Comments and corrections</a></li>
+<li><a href="#conclusions">6. Conclusions</a></li>
+<li><a href="#comments-and-corrections">7. Comments and corrections</a></li>
 </ul>
 <h2 id="introduction">1. Introduction</h2>
 <p>The indent size you use has two significant effects on your source code. A <strong>primary effect</strong> is immediately evident - the ease with which you quickly scan down through code. A <strong>secondary effect</strong>, and perhaps the most important, an effect which subtly shape how the source code  is structured. </p>

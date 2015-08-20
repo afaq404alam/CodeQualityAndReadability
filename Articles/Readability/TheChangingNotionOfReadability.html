@@ -1,9 +1,9 @@
-﻿
-<html>
+﻿<html>
 <head>
 <title>On the changing notion of code readability</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -35,13 +35,13 @@ We show that there are multiple layers of complexity when it comes to issues of 
 <p><img src="img/http_uxmastery.com_wp-content_uploads_2013_09_readability-tests.png" width="90%"></p>
 <p>Table of Content</p>
 <ul>
-<li><a href="#1-introduction">1. Introduction</a></li>
-<li><a href="#2-the-psychology-of-less-experienced-developers">2. The psychology of less experienced developers</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#the-psychology-of-less-experienced-developers">2. The psychology of less experienced developers</a></li>
 <li>
-<a href="#3-investigating-surface-complexity">3. Investigating &quot;surface complexity&quot;</a>
+<a href="#investigating-surface-complexity">3. Investigating &quot;surface complexity&quot;</a>
 <ul>
 <li>
-<a href="#31-the-notion-of-readability-changes-with-growing-experience">3.1 The notion of readability changes with growing experience</a>
+<a href="#the-notion-of-readability-changes-with-growing-experience">3.1 The notion of readability changes with growing experience</a>
 <ul>
 <li><a href="#version-a">Version A</a></li>
 <li><a href="#version-b">Version B</a></li>
@@ -53,13 +53,13 @@ We show that there are multiple layers of complexity when it comes to issues of 
 <li><a href="#conclusions">Conclusions</a></li>
 </ul>
 </li>
-<li><a href="#32-the-veterans-perspective">3.2 The veterans perspective</a></li>
+<li><a href="#the-veterans-perspective">3.2 The veterans perspective</a></li>
 </ul>
 </li>
-<li><a href="#4-investigating-underlying-complexity">4. Investigating &quot;underlying complexity&quot;</a></li>
-<li><a href="#41-the-architectural-simplification-that-never-became">4.1 The architectural simplification that never became</a></li>
-<li><a href="#5-conclusions">5. Conclusions</a></li>
-<li><a href="#6-comments">6. Comments</a></li>
+<li><a href="#investigating-underlying-complexity">4. Investigating &quot;underlying complexity&quot;</a></li>
+<li><a href="#the-architectural-simplification-that-never-became">4.1 The architectural simplification that never became</a></li>
+<li><a href="#conclusions">5. Conclusions</a></li>
+<li><a href="#comments">6. Comments</a></li>
 </ul>
 <h2 id="introduction">1. Introduction</h2>
 <p>As made painfully evident by the show &quot;X-factor&quot;, the less you know about a subject, the smarter you think you are on that subject. Likewise, discussions on program readability and best practices easily descents into a discussion on personal preferences and habits. Of particular difficulty is the problem that the notion of what is readable code changes with the experience you have with programming. Complexity comes in many forms. Inspired by KhyronVorrac comments on Reddit, perhaps it is helpful to differentiate between <em>surface complexity</em> and <em>underlying complexity</em> when discussing the readability of code. </p>

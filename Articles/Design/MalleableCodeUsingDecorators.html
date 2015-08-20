@@ -1,9 +1,9 @@
-﻿
-<html>
+﻿<html>
 <head>
 <title>Malleable code by using decorators</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -39,23 +39,23 @@
 <p><img src="img/httpspixabay.comdavand-anlæg-grøn-bøde-lag-abstrakt-821293.jpg" alt="from https://pixabay.com/da/vand-anl%C3%A6g-gr%C3%B8n-b%C3%B8de-lag-abstrakt-821293/" ></p>
 <p>Table of Content</p>
 <ul>
-<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
 <li>
-<a href="#2-the-all-in-one-class-implementation">2. The all-in-one-class implementation</a>
+<a href="#the-all-in-one-class-implementation">2. The all-in-one-class implementation</a>
 <ul>
-<li><a href="#21-extracting-methods-for-clarity">2.1 Extracting methods for clarity</a></li>
-<li><a href="#22-the-need-for-further-separation">2.2 The need for further separation</a></li>
+<li><a href="#extracting-methods-for-clarity">2.1 Extracting methods for clarity</a></li>
+<li><a href="#the-need-for-further-separation">2.2 The need for further separation</a></li>
 </ul>
 </li>
-<li><a href="#3-cache-as-a-wrapper-object">3. Cache as a wrapper object</a></li>
+<li><a href="#cache-as-a-wrapper-object">3. Cache as a wrapper object</a></li>
 <li>
-<a href="#4-improving-the-design-with-decorators">4. Improving the design with decorators</a>
+<a href="#improving-the-design-with-decorators">4. Improving the design with decorators</a>
 <ul>
-<li><a href="#41-the-decorator-implementation">4.1 The decorator implementation</a></li>
+<li><a href="#the-decorator-implementation">4.1 The decorator implementation</a></li>
 </ul>
 </li>
-<li><a href="#5-performance">5. Performance</a></li>
-<li><a href="#6-comments-and-corrections">6. Comments and corrections</a></li>
+<li><a href="#performance">5. Performance</a></li>
+<li><a href="#comments-and-corrections">6. Comments and corrections</a></li>
 </ul>
 <h2 id="introduction">1. Introduction</h2>
 <p>Recently with the v2.2.x versions of Stateprinter, we replaced the use of reflection (The <code>GetValue()</code> of <code>FieldInfo</code> and <code>MemberInfo</code>) with run-time code generation. It was a delirious moment, to see the overall run-time reduced by as much as 50%-75%. However, the joy was short, as new performance tests revealed crippling speeds for certain use scenarios. When instantiating a Stateprinter each time an object needed printing, insurmountable time was spent on run-time code-generation. Since there are very few types in a running program compared to the number of objects that may be printer, a cache holding the generated code, was an obvious choice.</p>

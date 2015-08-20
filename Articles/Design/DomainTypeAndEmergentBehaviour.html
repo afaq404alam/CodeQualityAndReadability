@@ -1,9 +1,9 @@
-﻿
-<html>
+﻿<html>
 <head>
 <title>Domain types creates readability ...and emergent behaviour</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -35,31 +35,31 @@
 <p><img src="img/httpspixabay.comdasommerfugl-insekt-oejne-sensor-376876.jpg"></p>
 <p>Table of Content</p>
 <ul>
-<li><a href="#1-describing-the-problem-domain">1. Describing the problem domain</a></li>
+<li><a href="#describing-the-problem-domain">1. Describing the problem domain</a></li>
 <li>
-<a href="#2-solution-1-using-simple-types">2. Solution 1: Using simple types</a>
+<a href="#solution--using-simple-types">2. Solution 1: Using simple types</a>
 <ul>
-<li><a href="#21-problems-with-using-the-simple-types">2.1 Problems with using the simple types.</a></li>
+<li><a href="#problems-with-using-the-simple-types">2.1 Problems with using the simple types.</a></li>
 </ul>
 </li>
 <li>
-<a href="#3-solution-2-domain-types-to-the-rescue">3. Solution 2: Domain types to the rescue</a>
+<a href="#solution--domain-types-to-the-rescue">3. Solution 2: Domain types to the rescue</a>
 <ul>
-<li><a href="#31-the-tag-class">3.1 The <code>Tag</code> class</a></li>
-<li><a href="#32-the-page-class">3.2 The <code>Page</code> class</a></li>
-<li><a href="#33-the-pagegenerator">3.3 The <code>PageGenerator</code></a></li>
-<li><a href="#34-the-tagcollection-class">3.4 The <code>TagCollection</code> class</a></li>
-<li><a href="#35-the-documentparser">3.5 The <code>DocumentParser</code></a></li>
+<li><a href="#the-tag-class">3.1 The <code>Tag</code> class</a></li>
+<li><a href="#the-page-class">3.2 The <code>Page</code> class</a></li>
+<li><a href="#the-pagegenerator">3.3 The <code>PageGenerator</code></a></li>
+<li><a href="#the-tagcollection-class">3.4 The <code>TagCollection</code> class</a></li>
+<li><a href="#the-documentparser">3.5 The <code>DocumentParser</code></a></li>
 </ul>
 </li>
 <li>
-<a href="#4-emergent-behaviour">4. Emergent behaviour</a>
+<a href="#emergent-behaviour">4. Emergent behaviour</a>
 <ul>
-<li><a href="#41-bug-fixing-the-link-name-creation">4.1 Bug fixing the link name creation</a></li>
+<li><a href="#bug-fixing-the-link-name-creation">4.1 Bug fixing the link name creation</a></li>
 </ul>
 </li>
-<li><a href="#5-conclusions">5. Conclusions</a></li>
-<li><a href="#6-comments-and-corrections">6. Comments and corrections</a></li>
+<li><a href="#conclusions">5. Conclusions</a></li>
+<li><a href="#comments-and-corrections">6. Comments and corrections</a></li>
 </ul>
 <p>Our investigations take outset in implementing an application with and without domain types. The implementations are easily coparably, and thus provides ample  opportunity to reflect and compare. </p>
 <p>What is a domain type anyways?? A domain type is a type that cover the information or intent of a phenomenon in the <em>problem domain</em> (i.e. the real life &quot;thing&quot; we are creating software for). The domain type is expressed in the <em>solution domain</em> (i.e. our code). Some times, a domain type is a mere wrapper for say a <code>string</code> or an <code>int</code>.  This thought may be alien to you, maybe it even feels like a complete waste of time to do all that wrappin'. Allot me to show you differently. </p>
