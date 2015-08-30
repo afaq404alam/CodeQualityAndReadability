@@ -2,8 +2,8 @@
 <head>
 <title>Malleable code by using decorators</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
-<link rel='shortcut icon' type='image/x-icon' href='http://kbilsted.github.io/CodeQualityAndReadability/favicon.ico' />
+<link rel="stylesheet" href="http://firstclassthoughts.co.uk/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='http://firstclassthoughts.co.uk/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -33,22 +33,22 @@
 <p><em>Author: Kasper B. Graversen</em>
 <br><a href="http://kbilsted.github.io/CodeQualityAndReadability/">[Introduction]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllTags.html">[All categories]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">[All articles]</a>
 <br></p>
-<p><a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Design.html"><img src="https://img.shields.io/badge/-Design-eee6bb.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/SOLID.html"><img src="https://img.shields.io/badge/-SOLID-815bee.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Single_Responsibility_Principle.html"><img src="https://img.shields.io/badge/-Single_Responsibility_Principle-27d630.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Design_Pattern.html"><img src="https://img.shields.io/badge/-Design_Pattern-9e89d7.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Decorator.html"><img src="https://img.shields.io/badge/-Decorator-1549c6.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Wrapper.html"><img src="https://img.shields.io/badge/-Wrapper-7d8750.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Cache.html"><img src="https://img.shields.io/badge/-Cache-3dda0b.svg" alt="Tag" /></a></p>
+<p><a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Design.html"><img src="https://img.shields.io/badge/-Design-eee6bb.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/SOLID.html"><img src="https://img.shields.io/badge/-SOLID-815bee.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Single_Responsibility_Principle.html"><img src="https://img.shields.io/badge/-Single_Responsibility_Principle-27d630.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Design_Pattern.html"><img src="https://img.shields.io/badge/-Design_Pattern-9e89d7.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Decorator.html"><img src="https://img.shields.io/badge/-Decorator-1549c6.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Wrapper.html"><img src="https://img.shields.io/badge/-Wrapper-7d8750.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Cache.html"><img src="https://img.shields.io/badge/-Cache-3dda0b.svg" alt="Tag" /></a></p>
 <p><em>Using the decorator design pattern, we get an exquisite separation of concern, while at the same time make the code more malleable.</em></p>
 <p>Please show your support by sharing and voting: </p>
-<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/httpspixabay.comdavand-anlæg-grøn-bøde-lag-abstrakt-821293.jpg" alt="from https://pixabay.com/da/vand-anl%C3%A6g-gr%C3%B8n-b%C3%B8de-lag-abstrakt-821293/" ></p>
 <p>Table of Content</p>
 <ul>
@@ -283,13 +283,13 @@ The <em>decorator</em> design pattern is similar to the wrapper object approach,
 <li>Maybe since we are referring to the cached code generator from only one place in the code, which is a <code>readonly</code> variable, the JIT'er is quick to discover that the interface type and the indirection it causes, can be optimized away.</li>
 </ul>
 <p>Please show your support by sharing and voting: </p>
-<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;title=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;text=Malleable%20code%20by%20using%20decorators&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/MalleableCodeUsingDecorators.html&amp;t=Malleable%20code%20by%20using%20decorators"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><br><br>
 <strong>Corrections and other editorial changes are very welcome. <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Design/MalleableCodeUsingDecorators.md">Just go to Github, press the edit button and fire away.</a> 
 Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. 
@@ -309,7 +309,7 @@ Do you have something to elaborate.. press the edit button!! :-)</strong></p>
 <p><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></p>
 <p><br><br><br>
 <br>
-Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+Read the <a href="http://firstclassthoughts.co.uk/">Introduction</a> or browse the rest <a href="http://firstclassthoughts.co.uk/AllArticles.html">of the site</a>
 <br></p>
 
 

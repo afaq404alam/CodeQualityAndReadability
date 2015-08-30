@@ -2,8 +2,8 @@
 <head>
 <title>Stepwise refinement of code</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
-<link rel='shortcut icon' type='image/x-icon' href='http://kbilsted.github.io/CodeQualityAndReadability/favicon.ico' />
+<link rel="stylesheet" href="http://firstclassthoughts.co.uk/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='http://firstclassthoughts.co.uk/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -33,19 +33,19 @@
 <p><em>Author: Kasper B. Graversen</em><br />
 <a href="http://kbilsted.github.io/CodeQualityAndReadability/">[Introduction]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllTags.html">[All categories]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">[All articles]</a> 
 <br>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Refactoring.html"><img src="https://img.shields.io/badge/-Refactoring-c6dc6b.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a></p>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Refactoring.html"><img src="https://img.shields.io/badge/-Refactoring-c6dc6b.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a></p>
 <p><br></p>
 <p><em>We all know that code left alone rot over time. Yet it is hard to get the time to solely change code for the purpose of changing it. And when you do get the time, it is hard to find the inclination and energy to really dig in.</em>    </p>
 <p><em>A technique I often employ to accommodate these problems, is to step-wise refine the code while reading it during the implementation of change requests or adding features.</em></p>
 <p>Please show your support by sharing and voting: </p>
-<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;title=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;text=Stepwise%20refinement%20of%20code&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;title=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;text=Stepwise%20refinement%20of%20code&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/pixabay.com_da_arbejder-vedligeholdelse-sejlere-665004.jpg"></p>
 <p>Table of Content</p>
 <ul>
@@ -243,13 +243,13 @@ bool IsPublic(SanitiedFieldInfo field)
 <p>I hope you are inspired to do safe refactorings the next time you have to understand a tangled piece of code. Simple refactorings like these do not take a lot of time, and they make life for you easier as your understanding shapes the code. Also it makes it easier to next reader too. So everyone benefits.</p>
 <p>A point we haven't touched upon is how distributed version control systems directly support this way of working. Every time we have completed a small step, we can issue a commit. Then, before pushing, we can combine the change sets into one. See <code>git reset --soft head~xx</code> or <code>hg combine xx</code> for further information on combining commits.</p>
 <p>Please show your support by sharing and voting: </p>
-<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;title=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;text=Stepwise%20refinement%20of%20code&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;title=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;text=Stepwise%20refinement%20of%20code&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/StepwiseRefinementOfCode.html&amp;t=Stepwise%20refinement%20of%20code"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><br><br>
 <strong>Corrections and other editorial changes are very welcome. <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Design/StepwiseRefinementOfCode.md">Just go to Github, press the edit button and fire away.</a> 
 Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. 
@@ -270,7 +270,7 @@ Do you have something to elaborate.. press the edit button!! :-)</strong></p>
 <p><br><br>
 <br>
 <br>
-Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+Read the <a href="http://firstclassthoughts.co.uk/">Introduction</a> or browse the rest <a href="http://firstclassthoughts.co.uk/AllArticles.html">of the site</a>
 <br></p>
 
 

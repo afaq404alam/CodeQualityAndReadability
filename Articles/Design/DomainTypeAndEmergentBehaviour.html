@@ -2,8 +2,8 @@
 <head>
 <title>Domain types creates readability ...and emergent behaviour</title>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<link rel="stylesheet" href="http://kbilsted.github.io/CodeQualityAndReadability/github-markdown.css">
-<link rel='shortcut icon' type='image/x-icon' href='http://kbilsted.github.io/CodeQualityAndReadability/favicon.ico' />
+<link rel="stylesheet" href="http://firstclassthoughts.co.uk/github-markdown.css">
+<link rel='shortcut icon' type='image/x-icon' href='http://firstclassthoughts.co.uk/favicon.ico' />
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -33,18 +33,18 @@
 <p><em>Author: Kasper B. Graversen</em>
 <br><a href="http://kbilsted.github.io/CodeQualityAndReadability/">[Introduction]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllTags.html">[All categories]</a> <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">[All articles]</a>
 <br>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Domain_Types.html"><img src="https://img.shields.io/badge/-Domain_Types-400cdb.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Emergent_Behaviour.html"><img src="https://img.shields.io/badge/-Emergent_Behaviour-80b3ec.svg" alt="Tag" /></a>
-<a href="http://kbilsted.github.io/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a></p>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Domain_Types.html"><img src="https://img.shields.io/badge/-Domain_Types-400cdb.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Emergent_Behaviour.html"><img src="https://img.shields.io/badge/-Emergent_Behaviour-80b3ec.svg" alt="Tag" /></a>
+<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Code_Readability.html"><img src="https://img.shields.io/badge/-Code_Readability-2cbbe2.svg" alt="Tag" /></a></p>
 <p><em>The focus of this article is how readability and maintainability is improved by replacing simple types with domain types. Consequences of introducing domain types is both a closer relationship between model and implementation, and that the domain types establishes a conceptual foundation making it easier to extend and adapt the application for future changes.</em></p>
 <p>Please show your support by sharing and voting: </p>
-<p><a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><img src="img/httpspixabay.comdasommerfugl-insekt-oejne-sensor-376876.jpg"></p>
 <p>Table of Content</p>
 <ul>
@@ -426,13 +426,13 @@ private string RinseForLinkText(string s)
 <li>Despite the initial judgement call, where we deemed an abstraction over the file system  &quot;too academic&quot;, eventually I did  create said abstraction. A <code>FileRepository</code> replacing  calls to  <code>DirectoryInfo</code> and <code>File</code>. This abstraction enabled us to do unit testing without hitting the hard drive and needing to clean up files. I guess, some times, unit testing can drive you to do domain types as well :-)</li>
 </ul>
 <p>Please show your support by sharing and voting: 
-<a href="https://www.reddit.com/submit?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://kbilsted.github.io/CodeQualityAndReadability/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://kbilsted.github.io/CodeQualityAndReadability/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;title=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;text=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Design/DomainTypeAndEmergentBehaviour.html&amp;t=Domain%20types%20creates%20readability%20...and%20emergent%20behaviour"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><br><br>
 <strong>Corrections and other editorial changes are very welcome. <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Design/DomainTypeAndEmergentBehaviour.md">Just go to Github, press the edit button and fire away.</a> 
 Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. 
@@ -452,7 +452,7 @@ Do you have something to elaborate.. press the edit button!! :-)</strong></p>
 <p><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></p>
 <p><br><br><br>
 <br>
-Read the <a href="http://kbilsted.github.io/CodeQualityAndReadability/">Introduction</a> or browse the rest <a href="http://kbilsted.github.io/CodeQualityAndReadability/AllArticles.html">of the site</a>
+Read the <a href="http://firstclassthoughts.co.uk/">Introduction</a> or browse the rest <a href="http://firstclassthoughts.co.uk/AllArticles.html">of the site</a>
 <br></p>
 
 
