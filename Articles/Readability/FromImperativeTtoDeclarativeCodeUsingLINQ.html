@@ -1,9 +1,11 @@
 ﻿<html>
 <head>
-<title>From imperative to a declarative style with LINQ</title>
+<title>From imperative to declarative code using LINQ extension methods</title>
+
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<link rel="stylesheet" href="http://firstclassthoughts.co.uk/github-markdown.css">
-<link rel='shortcut icon' type='image/x-icon' href='http://firstclassthoughts.co.uk/favicon.ico' />
+<link href="http://firstclassthoughts.co.uk/atelier-forest-light.css" type ="text/css" rel="stylesheet" />
+<link href="http://firstclassthoughts.co.uk/github-markdown.css" type ="text/css" rel="stylesheet">
+<link rel='shortcut icon' type='image/x-icon' href='http://firstclassthoughts.co.uk/favicon.ico'/>
 <style>
       .markdown-body {
                 min-width: 200px;
@@ -26,71 +28,29 @@
 
 
 </head>
-<body>
+<body onload="prettyPrint()">
 <article class="markdown-body">
 
-<h1 id="from-imperative-to-a-declarative-style-with-linq">From imperative to a declarative style with LINQ</h1>
+<h1 id="from-imperative-to-declarative-code-using-linq-extension-methods">From imperative to declarative code using LINQ extension methods</h1>
 <p><em>Author: Kasper B. Graversen</em>
-<br><a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/">[Introduction]</a> <a href="http://firstclassthoughts.co.uk/AllTags.html">[All categories]</a> <a href="http://firstclassthoughts.co.uk/AllArticles.html">[All articles]</a>
+<br><a href="http://firstclassthoughts.co.uk/">[Introduction]</a> <a href="http://firstclassthoughts.co.uk/AllTags.html">[All categories]</a> <a href="http://firstclassthoughts.co.uk/AllArticles.html">[All articles]</a>
 <br>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Code_Readability.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #2cbbe2;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">Code Readability</a>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Coding_Guideline.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #33ad2a;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">Coding Guideline</a>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Looping.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #497012;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">Looping</a>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/Iteration.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #df93a4;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">Iteration</a>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/for.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #8fd55c;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">for</a>
-<a href="http://firstclassthoughts.co.uk/CodeQualityAndReadability/Tags/LINQ.html" style="
-    color: #ffffff;
-    margin: 1px 1px 1px 1px;
-    padding: 2px 8px;
-    background-color: #2e09d3;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;">LINQ</a></p>
-<p><em>In this article we show how to create re-useable code and separating unrelated business logic by creating LINQ extension methods. We show code being transformed from imperative to declarative.</em></p>
+<a href="http://firstclassthoughts.co.uk/Tags/Code_Readability.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #2cbbe2;    display: inline-block;">Code Readability</a>
+<a href="http://firstclassthoughts.co.uk/Tags/Coding_Guideline.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #33ad2a;    display: inline-block;">Coding Guideline</a>
+<a href="http://firstclassthoughts.co.uk/Tags/Looping.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #497012;    display: inline-block;">Looping</a>
+<a href="http://firstclassthoughts.co.uk/Tags/Iteration.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #df93a4;    display: inline-block;">Iteration</a>
+<a href="http://firstclassthoughts.co.uk/Tags/for.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #8fd55c;    display: inline-block;">for</a>
+<a href="http://firstclassthoughts.co.uk/Tags/LINQ.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #2e09d3;    display: inline-block;">LINQ</a></p>
+<p><em>In this article we show how break down and separate unrelated business logic of a program. By creating a LINQ extension method, the separated code is very easy to reuse across the application, further, it transform the code from being imperative to declarative.</em></p>
 <p>Please show your support by sharing and voting:</p>
-<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;title=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;text=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;t=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;t=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
-<p><img src="img/staircase-209914_640.jpg"></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;title=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;text=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;t=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;t=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><img src="img/chameleon-885595_640.jpg"></p>
 <p>Table of Content</p>
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
@@ -122,80 +82,52 @@
 </li>
 </ul>
 <h2 id="introduction">1. Introduction</h2>
-<p>The other day I wrote <a href="RestrictExpressibilityWhenIterating.md">Restrict expressibility when iterating</a> it serves as the theoretical foundation for this article. It details how readable code is achieved by using code constructs that are limited in expressibility. Thus a LINQ expression is typically easier to reason about than say a <code>for</code> loop due to the limitations of what you can do. We continue this line of thought by showing an example where we turn logic expressed with a <code>for</code> loop into using LINQ.</p>
+<p>The other day I wrote <a href="RestrictExpressibilityWhenIterating.md">Restrict expressibility when iterating</a> it serves as the theoretical foundation for this article. The main take-away from it is how readable code is achieved through using code constructs that are limited in expressibility. Thus, a LINQ expression is typically easier to reason about than say a <code>for</code> loop due to the limitations of what you can do. We continue this  trail of thought, by showing an example where we turn logic expressed with a <code>for</code> loop into using LINQ.</p>
 <p>This implementation strategy has many advantages which are detailed later in the article, but to wet your appetite, let's summarize</p>
 <ul>
-<li>We separate concerns, the code becomes more SOLID and DRY</li>
-<li>We get a generally reusable component</li>
-<li>We can test code in isolation</li>
-<li>We turn usages of <code>for</code> into LINQ, making it composable with the rest of the LINQ universe</li>
+<li>We separate concerns, the code becomes more SOLID and DRY.</li>
+<li>We get a generally reusable component.</li>
+<li>We can easily test the code in isolation.</li>
+<li>We turn usages of <code>for</code> into LINQ, making it composable with the rest of the LINQ universe.</li>
 <li>We turn imperative code into declarative code. This means we shift focus from <em>how</em> to <em>what</em>.</li>
 </ul>
-<p>In essence we are developing a separate <code>Replace()</code> that is so general that it naturally extend the methods already provided by <code>System.Linq</code>.</p>
+<p>In essence, we are developing a separate <code>Replace()</code> method that naturally extend the LINQ universe.</p>
 <h2 id="a-use-case">2. A use case</h2>
-<p>Please excuse me for this whole section 2. I want to discuss taking outset in <em>real life code</em>. And thus the scene needs be set for a concrete problem situation. This way we are &quot;keeping it real&quot;. And hopefully more relevant to you. I hope it is not at the expense of you being bored to tears and quitting out. We set the scene with &quot;bread and butter code&quot;, not particularly interesting on its own. </p>
+<p>Please excuse me for this whole section 2. I want to take outset in <em>real life code</em>, and thus the scene must be set for a concrete problem. This way, hopefully it becomes more relevant to you. I hope it is not at the expense of you being bored to tears and quitting out. </p>
 <h3 id="modelling-intervals">2.1 Modelling intervals</h3>
-<p>For a constraint solver I am building I need a way to express a span of values, say from -2 upto but not including 30. We can depict this as:</p>
+<p>For a constraint solver I am building I need a way to express a span of values, say from -2 up to but, not including, 30. We can depict this as:</p>
 <pre class="prettyprint"><code>--[----------------------|----
  -2                      30
 </code></pre>
-<p>We use <code>[</code> to represent inclusive and <code>|</code> to denote exclusive. we can achieve this by creating a <code>Span</code> class and instantiate it with:</p>
+<p>We use <code>[</code> to represent inclusive and <code>|</code> to denote exclusive. we can achieve this by creating a <code>Span</code> class, like a Tuple holding two values, and instantiate it with:</p>
 <pre class="prettyprint"><code>new Span&lt;int&gt;(-2, 30);
 </code></pre>
-<p>The implementation is straight forward a class holding two instances <code>From</code> and <code>Upto</code></p>
-<pre class="prettyprint"><code>public class Span&lt;T&gt; where T : IComparable&lt;T&gt;
-{
-    public readonly T From, Upto;
-
-    public Span(T from, T upto)
-    {
-        if (Compare.Greater(from, upto))
-            throw new ArgumentException(&quot;From is bigger than To&quot;);
-        From = from;
-        Upto = upto;
-    }
-
-    public bool IsOverlapOf(Span&lt;T&gt; other)
-    {
-        var isOutsideBounds = other.From.CompareTo(Upto) &gt;= 0 || From.CompareTo(other.Upto) &gt;= 0;
-        return !isOutsideBounds;
-    }
-}
-</code></pre>
-<p>So we have a constructor taking the values of the span and a simple validation requiring the <code>from</code> to be no larger than the <code>upto</code>. We also implement an overlap check <code>IsOverlapOf()</code>. There is nothing out of the ordinary. Yet.</p>
+<p>In addition to holding the values,  we also implement an overlap check <code>IsOverlapOf()</code>.</p>
 <h3 id="modelling-coverage-of-intervals">2.2 Modelling coverage of intervals</h3>
 <p>Given a collection of these intervals, we want to track if they together span the whole range for the given data type. E.g. <code>int</code> has the range of -2147483648 to 2147483647. If we define the interval -2 to 30, we have two uncovered intervals, namely that of -2147483648 upto -2 and 30 upto 2147483647.</p>
 <p>Graphically we can represent the uncovered interval as starting with</p>
 <pre class="prettyprint"><code>     [-------------------------------] 
 int.MinValue                    int.MaxValue
 </code></pre>
-<p>and after the &quot;-2 up to 30&quot;</p>
+<p>and after configuring the interval (-2, 30) the uncovered interval becomes</p>
 <pre class="prettyprint"><code>     [----------|     [-------------------]
 int.MinValue   -2     30             int.MaxValue
 </code></pre>
-<p>We implement an collection holding both the configurations and the uncovered intervals. We initialize the collection by registering the whole data range of <code>int</code> to be uncovered.</p>
+<p>We implement an collection administering this information, by holding both the configurations and the uncovered intervals.</p>
 <pre class="prettyprint"><code>public class IntIntervalCollection
 {
     List&lt;Span&lt;int&gt;&gt; Configurations = new List&lt;Span&lt;int&gt;&gt;();
     List&lt;Span&lt;int&gt;&gt; UncoveredIntervals;
-
-    public IntIntervalCollection()
-    {
-        var allInterval = new Span&lt;int&gt;(int.MinValue, int.MaxValue);
-        var max = new Span&lt;int&gt;(int.MaxValue, int.MaxValue);
-        UncoveredIntervals = new List&lt;Span&lt;int&gt;&gt;() { allInterval, max, };
-    }
 }
 </code></pre>
 <h3 id="splitting-an-interval">2.3 Splitting an interval</h3>
 <p>On the <code>Span</code> class we can create a method, that given an interval, produces 0, 1, or 2 sub intervals where the given interval is excluded. What for? Well, to cater for the very situation depicted above. </p>
 <pre class="prettyprint"><code>public class Span&lt;T&gt; where T : IComparable&lt;T&gt;
 {
+    public readonly T From, Upto;
+
     public List&lt;Span&lt;T&gt;&gt; RemoveInterval(Span&lt;T&gt; interval)
     {
-        if (!IsOverlapOf(interval))
-            throw new ArgumentException(&quot;Cannot remove interval as there is no overlap&quot;);
-
         var result = new List&lt;Span&lt;T&gt;&gt;();
  
         if (Compare.LessOrEquals(From, interval.From))
@@ -208,14 +140,11 @@ int.MinValue   -2     30             int.MaxValue
     }
 }
 </code></pre>
-<p>Basically, the gist is that if the input starts after the current interval, we create a span covering up to the input start. Like-wise in the other end. Assume we have an interval of the full range of <code>int</code> and we call <code>RemoveInterval()</code> with an -2 up to 30, yields the following two intervals:</p>
-<pre class="prettyprint"><code>     [----------|     [-------------------] 
-int.MinValue   -2     30             int.MaxValue
-</code></pre>
+<p>Basically, the gist of it is that when the input starts after the current interval, we create a span covering up to the input start. Like-wise in the other end. Assume we have an interval of the full range of <code>int</code> and we call <code>RemoveInterval()</code> with an (-2, 30), we get two intervals: <code>(int.MinValue, -2)</code> and <code>(30, int.MaxValue)</code>. Assuming we understand the graphics above this is as expected.</p>
 <h2 id="adding-a-configuration-element">3. Adding a configuration element</h2>
 <p>Now the scene has been set. The problem introduced along with all the pieces needed. Now we just need to assemble them. </p>
 <p>When adding an element to our <code>IntIntervalCollection</code> collection, we add it so the <code>Configurations</code> list, and subtract the interval from the <code>UncoveredIntervals</code> using the <code>RemoveInterval()</code>.</p>
-<p>There are many ways to doing this. I'll show how I first approached this using low-level imperative <code>for</code> with indexing. When I had a working solution I immediately refactored it into a declarative LINQ extension. After analysing the result through writing this article I feel quite content with spending that energy on doing the change.</p>
+<p>There are many ways to doing this. I'll show how I first approached this using low-level imperative <code>for</code> with indexing. When I had a working solution, I immediately refactored it into a declarative LINQ extension. After analysing the end-result, through writing this article, I feel quite content with spending that bit of energy on doing the refactoring.</p>
 <h3 id="the-business-logic-expressed-imperatively-using-">3.1 The business logic expressed imperatively using <code>for</code></h3>
 <p>The following code will</p>
 <ul>
@@ -244,7 +173,7 @@ int.MinValue   -2     30             int.MaxValue
     }
 }
 </code></pre>
-<p>This is very imperative. Step-by-step we iterate over the uncovered steps and if we have a match we replace and break out. We can extract the iterating part of the logic as shown below. </p>
+<p>In the outset this code is not too bad. Sure we are iterating over a list of elements and potentially could perform funky stuff on <code>i</code> while iterating. But the whole code fits on my screen. You'' notice that the style is very imperative. Step-by-step instructions are made to iterate over the uncovered steps, and if we have a match we replace and break out. We can extract the iterating part of the logic as shown below: </p>
 <pre class="prettyprint"><code>public class IntIntervalCollection
 {
     public void AddConfiguration(Span&lt;int&gt; configuration)
@@ -274,7 +203,7 @@ int.MinValue   -2     30             int.MaxValue
     }
 }
 </code></pre>
-<p>We are moving towards a more declarative style in the <code>AddConfiguration()</code> method and separating logic between searching and replacing. Notice how we are closer to the bullet point description served above. Definitely a step in the right direction. But we can do better!</p>
+<p>We are moving towards a more declarative coding style in the <code>AddConfiguration()</code> method. And w have separated the logic between searching and replacing. Notice how we are closer to the bullet point description served above. Definitely a step in the right direction. But we can do better!</p>
 <p>Of course there are many ways to cut the cake in terms of which parts of the code we want to extract into which methods. This is just what came to mind first. Thus this is in no way the &quot;authoritative&quot; approach.</p>
 <h3 id="the-business-logic-expressed-declaratively-using-linq">3.2 The business logic expressed declaratively using LINQ</h3>
 <p>As motivated in <a href="RestrictExpressibilityWhenIterating.md">Restrict expressibility when iterating</a> using LINQ over <code>for</code> often leads to more readable code. The code shown in 3.1 is somewhat unclear if we look at the methods from a 5 mile perspective. There is a method for adding, and   a method for finding an overlap. Zooming in on the <code>AddConfiguration()</code>, we see some removing and inserting. Looking even closer, we discover that the removing and inserting is related in position. <em>In actuality, what we are dealing with here is a replacement</em>. </p>
@@ -340,7 +269,7 @@ int.MinValue   -2     30             int.MaxValue
 }
 </code></pre>
 <h2 id="abstraction-leads-to-general-applicability">4. Abstraction leads to general applicability</h2>
-<p>The <code>Replace()</code> method is a general abstraction over a common re-occuring problem. And since we do not constraint the type parameter <code>T</code>, we can apply it to all sorts of type. And problems. How about playing around with string replacement?</p>
+<p>The <code>Replace()</code> method is a general abstraction over a common re-occurring problem. And since we do not constraint the type parameter <code>T</code>, we can apply it to all sorts of type. And problems. How about playing around with string replacement?</p>
 <pre class="prettyprint"><code>var input = new[] { &quot;Hello&quot;, &quot;World&quot;, &quot;Bye&quot;, &quot;Again&quot; };
 var replaced = input.Replace(x =&gt; x.StartsWith(&quot;A&quot;), x =&gt; new[] { x.ToLower()});
 
@@ -348,19 +277,19 @@ var result = string.Join(&quot;, &quot;, replaced);
 Console.WriteLine(result);
 </code></pre>
 <p>which prints: <code>Hello, World, Bye, again</code>.</p>
-<p>Now that we have a basic notion of a <code>Replace()</code> in a LINQ context, we can start thinking in terms of it. Giving inspiration to how we implement the <code>Replace()</code>. Perhaps we should rename <code>Replace()</code> to <code>ReplaceFirst()</code> and create a <code>Replace()</code> that replaces all instances. Or how about a <code>Replace()</code> that is aware of the ordering of the input and thus can do optimizations based on this knowledge. It is an open territory left for ideas to seize. And testing is easy since we have abstracted away concrete business cases.</p>
+<p>Now that we have a basic notion of a <code>Replace()</code> in a LINQ context, we can start thinking in terms of it. Giving inspiration to how we implement the <code>Replace()</code>. Perhaps we should rename <code>Replace()</code> to <code>ReplaceFirst()</code> and create a <code>Replace()</code> that does not bail out after the first match. Or how about a <code>Replace()</code> that is aware of the ordering of the input and thus can do optimizations based on this knowledge. It is an open territory for ideas to be seized. Testing is easy since we have abstracted away concrete business cases.</p>
 <p>But perhaps more importantly, we can also think of using <code>Replace()</code> in the context of solving other business requirements. The string example was not an important example, it merely shows how wide a range of problems we can apply this to.</p>
 <h2 id="discussion">5. Discussion</h2>
-<p>At any time, I will argue that the <code>Replace()</code> abstraction leads to higher quality software, that is easier to read and reuse. Yet there is a thing or two to be said.</p>
+<p>I will argue that the <code>Replace()</code> abstraction leads to higher quality software, that is easier to read and reuse. Yet there is a thing or two to be said.</p>
 <h3 id="the-problem-with-lesser-experienced-developers">5.1 The problem with lesser experienced developers</h3>
-<p>Admittedly, it may be a bitter pill to swallow for the less experienced programmer, the first time he looks at the implementation of <code>Replace()</code>. It may be outside his domain of knowledge </p>
+<p>Admittedly, it may be a bitter pill to swallow for a less experienced programmer, the first time he looks at the implementation of <code>Replace()</code>. It may be outside his domain of knowledge </p>
 <ul>
 <li>Thinking in streams.</li>
 <li>Not knowing the semantics of <code>yield</code> or <code>this</code> as the first &quot;method argument&quot;.</li>
 </ul>
 <p>But aren't we blowing things out of proportion? A less experienced developer may not even recognize that we are not using the standard LINQ methods supplied from Microsoft. Secondly, the <code>yield</code> semantics have been around for a long time now. That along with LINQ has been well established to be a good idea: From Smalltalk in 1967, to C# (2007), heck even Java jumped wagon (2015)!. </p>
-<p>I have not written a LINQ extension method in over a year, yet I was able to spew out the <code>Replace()</code> in one go. Without needing to look up anything on the internet. It was bug free. Testing took longer to write than the code itself. So let's not exaggerate complexity here.  </p>
-<p>Besides getting the lesser experienced up to speed in terms of expressing code using the full potential of the programming language is a small price to pay. Let alone, all the future implementations the lesser experienced will be writing - now with a new tool in his tool belt. Understanding the capabilities of the language in which you program can only lead to something good.</p>
+<p>I have not written a LINQ extension method in over a year, yet I was able to spew out the <code>Replace()</code> in one go. Without needing to look up anything on the internet. It was bug free. Testing took longer to write than the code itself. So let's not exaggerate complexity here when you have first learned how LINQ operates and how to do extension methods.  </p>
+<p>Besides getting the lesser experienced up to speed in terms of expressing code using the full potential of the programming language is a small price to pay. Let alone, all the future implementations the now less-lesser-experienced will be writing. Understanding the capabilities of the language in which you program can only lead to something good.</p>
 <p>It is possible to create a <code>Replace()</code> method that is not integrating with LINQ, operating on <code>List&lt;&gt;</code> and not using the &quot;extension method semantics&quot; of C#. Surely, that would make the code look more familiar to the less experienced, but we will loose out on the composibility with the rest of LINQ which would be a shame.</p>
 <h3 id="separation-of-concerns">5.2 Separation of concerns</h3>
 <p>What we have achieved here may <em>seem</em> a bit complicated to programmers not used to using LINQ or seeing LINQ extensions. And you can argue, that the number of lines certainly have increased. Line count, however, is very subjective. What looks longer may in fact be shorter! Every time we start re-using <code>Replace()</code> in Never the less, we have achieved something <em>&quot;magical&quot;</em>. </p>
@@ -371,21 +300,21 @@ Console.WriteLine(result);
 <li>The end-code has been changed from an imperative style to a declarative style.</li>
 </ul>
 <h3 id="over-engineering">5.3 Over engineering?</h3>
-<p>Is this a case of over engineering? A bored programmer spending an afternoon conjuring up magical artifacts rather than droning XML configuration files? I believe not! The refactoring was not time consuming. We have a reuseable component. Our <code>IntIntervalCollection</code> (and all the other collections I need to implement) benefit from the abstraction. Both in terms of code size and complexity.</p>
+<p>Is this a case of over engineering? A bored programmer spending an afternoon conjuring up magical artefacts rather than droning XML configuration files? I believe not! The refactoring was not time consuming. We have a reusable component. Our <code>IntIntervalCollection</code> (and all the other collection classes for dates, long, etc. I need implementing) benefits from the abstraction. Both in terms of code size and complexity.</p>
 <h3 id="performance-implications">5.4 Performance implications</h3>
 <p>I have not made any performance measurements. If you feel inclined, please do so and share your experiences. But even if it turns out that the <code>Replace()</code> using LINQ is 5 times slower than the &quot;low level&quot; in-array solution presented first, I wouldn't hesitate to using <code>Replace()</code>. When I have a somewhat or complete application I will performance measure the most common use cases and let that be my guide. </p>
 <h3 id="summary">Summary</h3>
 <p>We have shown how to turn a <code>for</code> into LINQ, thereby reducing the expressibility of the code. Separating unrelated business code that can be independently tested and re-used. We turn imperative code into declarative code. This means we shift focus from <em>how</em> to <em>what</em>. </p>
 <p>Please show your support by sharing and voting:</p>
-<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;title=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
-<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;text=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
-<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
-<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;t=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
-<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
-<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Readability/SeparatingConcernsWithLinq.html&amp;t=From%20imperative%20to%20a%20declarative%20style%20with%20LINQ"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
+<p><a href="https://www.reddit.com/submit?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;title=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/reddit.png" alt="Reddit this" /></a>
+<a href="https://twitter.com/intent/tweet?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;text=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods&amp;via=kbilsted"><img src="http://firstclassthoughts.co.uk/img/twitter.png" alt="Tweet this" /></a>
+<a href="https://plus.google.com/share?url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/gplus.png" alt="Googleplus this" /></a>
+<a href="https://facebook.com/sharer.php?u=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;t=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/facebook.png" alt="Facebook this" /></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/linkedin.png" alt="LinkedIn this" /></a>
+<a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html"><img src="http://firstclassthoughts.co.uk/img/feedly.png" alt="Feedly this" /></a>
+<a href="http://news.ycombinator.com/submitlink?u=http://firstclassthoughts.co.uk/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.html&amp;t=From%20imperative%20to%20declarative%20code%20using%20LINQ%20extension%20methods"><img src="http://firstclassthoughts.co.uk/img/ycombinator.png" alt="Ycombinator this" /></a></p>
 <p><br><br></p>
-<p><strong>Comments are very welcome! Corrections and other editorial changes are very welcome. <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Readability/SeparatingConcernsWithLinq.md">Just go to Github, press the edit button and fire away.</a> 
+<p><strong>Comments are very welcome! Corrections and other editorial changes are very welcome. <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Readability/FromImperativeTtoDeclarativeCodeUsingLINQ.md">Just go to Github, press the edit button and fire away.</a> 
 Have I left out important information about your favourite language, press the edit button. Are there wordings that definitely are not English, press the edit button. 
 Do you have something to elaborate.. press the edit button!! :-)</strong></p>
 <p><br><div id="disqus_thread"></div></p>
