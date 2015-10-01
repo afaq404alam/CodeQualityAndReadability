@@ -34,7 +34,7 @@
 
 <h1 id="the-6-best-practices-for-writing-linq-extension-methods">The 6 best practices for writing LINQ extension methods</h1>
 <p><em>Author: Kasper B. Graversen</em>
-<br><a href="http://firstclassthoughts.co.uk/">[Introduction]</a> <a href="http://firstclassthoughts.co.uk/AllTags.html">[All categories]</a> <a href="http://firstclassthoughts.co.uk/AllArticles.html">[All articles]</a>
+<br><a href="http://firstclassthoughts.co.uk/">[Introduction]</a> <a href="http://firstclassthoughts.co.uk/AllTags.html">[All categories]</a> <a href="http://firstclassthoughts.co.uk/AllArticles.html">[All articles]</a> <a href="https://github.com/kbilsted/CodeQualityAndReadability/blob/master/Articles/Design/LINQExtensionMethodsBestPractices.md">[Edit article <img src="http://firstclassthoughts.co.uk/img/edit.png"> ]</a>
 <br>
 <a href="http://firstclassthoughts.co.uk/Tags/LINQ.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #2e09d3;    display: inline-block;">LINQ</a>
 <a href="http://firstclassthoughts.co.uk/Tags/Extension_Methods.html" style="color: #ffffff; font-size: 12px; margin: 1px 1px 1px 1px; padding: 2px 8px; border-radius: 4px; background-color: #37b535;    display: inline-block;">Extension Methods</a></p>
@@ -229,7 +229,7 @@ var billing = newYorkerRichards.SomeOperation();
 <p>Does <strong>not</strong> execute the code in <code>SomeOperation</code>! We can easily return our <code>someCities</code> variable and pass it onto a completely different method/context, in which it will be executed or may be passed on again. This can lead to difficult to trace bugs since the error is very far from the origin. And it can get especially nasty when the side-effect accesses entities using external resources such as a database connection that may well have been closed.</p>
 <p>Naturally, there will be times where side-effects is the only viable solution. So use them. Just think twice before you jump that wagon. </p>
 <h2 id="summary">7. Summary</h2>
-<p>The main takeaway from this article is a checklist of things to go through each time you write a LINQ extension method.</p>
+<p>The main takeaway from this article is a check list of things to go through each time you write a LINQ extension method.</p>
 <ol>
 <li>Use a dedicated and easy-to-find namespace for your LINQ extension methods.</li>
 <li>Invest energy into proper naming.</li>
