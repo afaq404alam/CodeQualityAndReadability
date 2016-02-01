@@ -218,7 +218,7 @@ Fragmented blocks larger than 0.5 MB:
     Addr     Size      Followed by
 4cbd823c    0.7MB         4cc92d94 System.Byte[]
 </pre>
-<p>Clearly the cult prints are <code>Okanshi.MonitorMessage+IncrementSuccess</code> and <code>Okanshi.MonitorMessage+Time</code> which take up <code>329704560</code> and <code>494556456</code> bytes of memory respectively. At the same time we see a very high object count <code>20606535</code> and <code>20606519</code>.</p>
+<p>Clearly the culprits are <code>Okanshi.MonitorMessage+IncrementSuccess</code> and <code>Okanshi.MonitorMessage+Time</code> which take up <code>329704560</code> and <code>494556456</code> bytes of memory respectively. At the same time we see a very high object count <code>20606535</code> and <code>20606519</code>.</p>
 <p>I can dig deeper into the memory allocations investigating the raw memory of the allocations, eg. the <code>Char[]</code> allocations found at <code>$72c847d8</code>.</p>
 <pre>0:000>!dumpheap -mt 72c847d8
 4cb845c0 72c847d8       14
