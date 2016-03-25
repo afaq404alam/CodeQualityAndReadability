@@ -23,7 +23,7 @@ Table of Content
 	 
 ## 1. James Bach
 
-[James Bach](https://en.wikipedia.org/wiki/James_Marcus_Bach) is a controversial figure in the testing community. Mostly because he if of the opinion that all you've learned in testing classes is pure garbage. In this talk he goes through a number of examples to prove that point.
+[James Bach](https://en.wikipedia.org/wiki/James_Marcus_Bach) is a controversial figure in the testing community. Mostly because he is of the opinion that all you've learned in testing classes is pure garbage. In this talk he goes through a number of examples to prove that point.
 
 Allow the speaker around the 5 minute mark to really warm of. From that point on its just pure hilarious jokes mixed with ranting but at the same time really educative. I hope you enjoy it as much as I have (and I've watched it couple of times already).
 
